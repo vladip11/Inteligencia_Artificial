@@ -4,7 +4,6 @@ import sys
 import time
 from queue import PriorityQueue
 
-
 class Tablero:
     def __init__(self, estados):
         self.tamano = int(math.sqrt(len(estados)))
@@ -27,6 +26,9 @@ class Tablero:
             if indice_vacio + self.tamano < self.tamano * self.tamano:
                 nuevos_estados[indice_vacio + self.tamano], nuevos_estados[indice_vacio] = nuevos_estados[indice_vacio], nuevos_estados[
                     indice_vacio + self.tamano]
+        for i in range(0,15,5):
+            print("{} {} {} {} {}".format(nuevos_estados[i],nuevos_estados[i+1],nuevos_estados[i+2],nuevos_estados[i+3],nuevos_estados[i+4]))
+        print("***********************")
         return Tablero(nuevos_estados)
 
 
